@@ -20,10 +20,10 @@
         </style>
     </head>
  <body id="app">
-    <script async src="https://cse.google.com/cse.js?cx=e0402a45edb0b4802">
+    {{-- <script async src="https://cse.google.com/cse.js?cx=e0402a45edb0b4802">
     </script>
-    <div class="gcse-search"></div>
-    <example-component></example-component>
+    <div class="gcse-search"></div> --}}
+    <main></main>
     <script src="js/app.js"></script>
  </body>
 </html>
