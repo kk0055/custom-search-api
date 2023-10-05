@@ -14,7 +14,7 @@ class SearchController extends Controller
     {
         $apiKey = env('API_KEY');
         $id = env('SEARCH_ENGINE_ID');
-        $query = request()->query('word');
+        $query = request()->query('keyword');
         $url = "https://www.googleapis.com/customsearch/v1?key=$apiKey&cx=$id&q=$query";
         $response = Http::get($url);
         return $response;
