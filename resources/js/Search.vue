@@ -28,7 +28,7 @@
             />
         </div>
         <div class="bar">
-              <img
+            <img
                 alt="Google"
                 src="https://cdn-icons-png.flaticon.com/128/149/149852.png"
                 class="searchimage"
@@ -38,7 +38,7 @@
                 type="text"
                 title="Search"
                 v-model="keyword"
-                @keydown.enter="getData"
+                @keydown.enter="moveToResultPage"
             />
             <a href="#">
                 <img
@@ -61,8 +61,8 @@ export default {
         keyword: "",
     }),
     methods: {
-        async getData() {
-            if(!this.keyword) return
+        moveToResultPage() {
+            if (!this.keyword) return;
             // const url = `api/search`;
             // axios
             //     .get(url, {
@@ -71,7 +71,7 @@ export default {
             //         },
             //     })
             //     .then((response) => this.results = response);
-                this.$router.push({ name: 'results', query: {q: this.keyword }})
+            this.$router.push({ name: "results", query: { q: this.keyword } });
         },
     },
 };
@@ -80,11 +80,11 @@ export default {
 .image {
     text-align: center;
 }
-.searchimage{
-    width:15px;
-    height:15px;
-    margin-left:10px;
-    margin-right:10px;
+.searchimage {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 ul {
     list-style-type: none;

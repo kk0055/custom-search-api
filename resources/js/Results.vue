@@ -1,12 +1,12 @@
 <template>
-    <div >
+    <div>
         <header>
             <div class="top-header">
                 <div class="top-header__left-sec">
                     <span class="material-icons-outlined menu-bar-icon">
                         menu
                     </span>
-                    <a href="#" id="google-logo" title="Go to Google Home">
+                    <a href="dummy:" id="google-logo" title="Go to Google Home">
                         <img
                             src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
                             alt=""
@@ -22,7 +22,8 @@
                                 name="search"
                                 id="inp--searchbox"
                                 autocomplete="off"
-                                v-model="$route.query.q"
+                                v-model="keyword"
+                                @keydown.enter="getData"
                             />
                         </div>
 
@@ -66,14 +67,14 @@
                     <div class="bottom-header__left-sec">
                         <ul>
                             <li class="active-page">
-                                <a href="#">
+                                <a href="dummy:">
                                     <span class="material-symbols-outlined">
                                         search </span
                                     >All</a
                                 >
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="dummy:">
                                     <span class="material-symbols-outlined">
                                         imagesmode
                                     </span>
@@ -81,7 +82,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="dummy:">
                                     <span class="material-symbols-outlined">
                                         shopping_cart
                                     </span>
@@ -89,7 +90,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="dummy:">
                                     <span class="material-symbols-outlined">
                                         slideshow
                                     </span>
@@ -97,7 +98,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="dummy:">
                                     <span class="material-symbols-outlined">
                                         breaking_news
                                     </span>
@@ -105,7 +106,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="dummy:">
                                     <span class="material-symbols-outlined">
                                         more_vert
                                     </span>
@@ -116,7 +117,7 @@
                     </div>
                     <div class="bottom-header__right-sec">
                         <ul>
-                            <li><a href="#">Tools</a></li>
+                            <li><a href="dummy:">Tools</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -196,25 +197,20 @@
                     <span class="material-icons"> ● </span>
                     <span>Tokyo</span>
                     <span style="color: #1a0dab">
-                        <a href="#">
+                        <a href="dummy:">
                             - From your IP address
-                            <a href="#"> - Update location</a>
+                            <a href="dummy:"> - Update location</a>
                         </a></span
                     >
                 </div>
             </div>
             <div class="bottom-footer">
-                <ul>
-                    <li>
-                        <a
-                            >More options in Quick settings (<span
-                                class="material-symbols-outlined"
-                            >
-                                settings </span
-                            >)</a
-                        >
-                    </li>
-                </ul>
+                <span
+                    >More options in
+                    <a href="dummy:" style="color: #1a0dab">
+                        Quick settings </a
+                    >
+                </span>
             </div>
         </footer>
     </div>
@@ -226,32 +222,47 @@ export default {
     data: () => ({
         results: "",
         data: "",
-        items: "",
         dataReady: false,
+        newKeyword: "",
     }),
+    computed: {
+        keyword: {
+            get() {
+                return this.$route.query.q;
+            },
+            set(val) {
+                this.newKeyword = val;
+                return val;
+            },
+        },
+    },
     created() {
-        // this.getData();
+        this.getData();
     },
     methods: {
         async getData() {
             if (!this.$route.query.q) return;
+            const keyword = this.newKeyword
+                ? this.newKeyword
+                : this.$route.query.q;
+
             const url = `api/search`;
             try {
                 const response = await axios.get(url, {
                     params: {
-                        keyword: this.$route.query.q,
+                        keyword: keyword,
                     },
                 });
 
                 this.results = response;
                 this.data = this.results.data;
-                this.items = this.data.items;
                 console.log(response);
                 console.log(this.data.items);
                 this.dataReady = true;
             } catch (error) {
                 console.log(error);
             }
+            this.$router.push({ name: "results", query: { q: keyword } });
         },
     },
 };
@@ -928,11 +939,10 @@ footer .top-footer span:nth-child(3) {
 footer .bottom-footer {
     padding: 1rem 0 1.6rem;
     padding-left: 12.5vw;
-}
-footer .bottom-footer ul {
     display: flex;
 }
-footer .bottom-footer ul li {
+footer .bottom-footer span a {
+    display: inline-block;
     margin-right: 2.5rem;
     list-style-type: none;
 }
