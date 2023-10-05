@@ -22771,18 +22771,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       results: "",
-      data: ""
+      data: "",
+      items: "",
+      dataReady: false
     };
   },
   created: function created() {
-    console.log(this.$route.query.q);
-    this.getData();
+    // this.getData();
   },
   methods: {
     getData: function getData() {
       var _this = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var url;
+        var url, response;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
@@ -22793,21 +22794,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               return _context.abrupt("return");
             case 2:
               url = "api/search";
-              _context.next = 5;
+              _context.prev = 3;
+              _context.next = 6;
               return axios__WEBPACK_IMPORTED_MODULE_0___default().get(url, {
                 params: {
                   keyword: _this.$route.query.q
                 }
-              }).then(function (response) {
-                return _this.results = response;
               });
-            case 5:
-              _this.data = _this.results.data;
             case 6:
+              response = _context.sent;
+              _this.results = response;
+              _this.data = _this.results.data;
+              _this.items = _this.data.items;
+              console.log(response);
+              console.log(_this.data.items);
+              _this.dataReady = true;
+              _context.next = 18;
+              break;
+            case 15:
+              _context.prev = 15;
+              _context.t0 = _context["catch"](3);
+              console.log(_context.t0);
+            case 18:
             case "end":
               return _context.stop();
           }
-        }, _callee);
+        }, _callee, null, [[3, 15]]);
       }))();
     }
   }
@@ -22930,40 +22942,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_1 = {
   "class": "top-header"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_2 = {
   "class": "top-header__left-sec"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "material-icons-outlined menu-bar-icon"
-}, " menu "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+}, " menu ", -1 /* HOISTED */);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#",
   id: "google-logo",
   title: "Go to Google Home"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png",
   alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+})], -1 /* HOISTED */);
+var _hoisted_5 = {
   "class": "search-container"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_6 = {
   "class": "search-container__left-sec"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "material-icons search-container__left-sec--srch-icon"
-}, " search "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "search",
-  name: "search",
-  id: "inp--searchbox",
-  autocomplete: "off",
-  value: "codewithfaraz"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "material-symbols-outlined"
+}, " search ", -1 /* HOISTED */);
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "search-container__right-sec"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "material-icons"
-}, " close "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "material-icons"
-}, "mic"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "material-icons"
-}, " search ")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "material-symbols-outlined"
+}, " close "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "material-symbols-outlined"
+}, " keyboard_voice "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "material-symbols-outlined"
+}, " search ")], -1 /* HOISTED */);
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "top-header__right-sec"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "top-header__right-sec--apps"
@@ -22976,47 +22990,47 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "top-header__right-sec--user-acc"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "https://lh3.googleusercontent.com/ogw/ADGmqu_wdWJPIUjYUsJmXS6LT_Nxgzb34iCho1mrNsbH=s83-c-mo",
+  src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeQzvB5Va-nedgQrbVqIh1xDLY7jOWDEGsZw&usqp=CAU",
   alt: ""
-})])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "bottom-header"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "bottom-header__left-sec"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "active-page"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "material-icons"
-}, "search"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("All")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "material-icons-outlined"
-}, " article "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" News")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "material-icons-outlined"
-}, " book "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Books")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "material-icons-outlined"
-}, " smart_display "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Videos")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "material-icons-outlined"
-}, " image "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Images")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "material-icons-outlined"
-}, " more_vert "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" More")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "bottom-header__right-sec"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#"
-}, "Tools")])])])])])], -1 /* HOISTED */);
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<main><div class=\"main-container\"><div class=\"search-delay\"> About 17,000,000 results (0.35 seconds) </div><div class=\"result-item\"><div class=\"result-item-link\"><a href=\"#\">https://www.codewithfaraz.com</a><a href=\"#\"><span class=\"material-icons-outlined dots\"> more_vert </span></a></div><h3><a href=\"#\">Code with Faraz - Best Front-End Components and Blogs</a></h3><p> codewithfaraz is an up-to-date collection of accessible front-end components, blogs and tutorials related to technology, programming and web development. </p><div class=\"sub-result-container\"><div class=\"sub-result-item\"><h3><a href=\"#\">Components</a></h3><p> Find an up-to-date collection of accessible front-end components ... </p></div><div class=\"sub-result-item\"><h3><a href=\"#\">Blogs</a></h3><p> Get Latest Blogs related to technology, programming ... </p></div><div class=\"sub-result-item\"><h3><a href=\"#\">About</a></h3><p> This is Faraz Choudhary admin of codewithFaraz.com ... </p></div><div class=\"sub-result-item\"><h3><a href=\"#\">Privacy Policy</a></h3><p> This Privacy Policy applies only to our online activities and is valid for ... </p></div><div class=\"sub-result-item\"><h3><a href=\"#\">Contact</a></h3><p> Lets talk about everything! Whether you have a question ... </p></div></div></div><div class=\"result-item\"><div class=\"result-item-link\"><a href=\"#\">https://www.codewithfaraz.com › components </a><a href=\"#\"><span class=\"material-icons-outlined dots\"> more_vert </span></a></div><h3><a href=\"#\">Latest Front-End Components - codewithFaraz</a></h3><p> Find an up-to-date collection of accessible front-end components. Components are used to define custom, reusable HTML elements. </p></div><div class=\"result-item\"><div class=\"result-item-link\"><a href=\"#\">https://www.codewithfaraz.com › contact </a><a href=\"#\"><span class=\"material-icons-outlined dots\"> more_vert </span></a></div><h3><a href=\"#\">Code with Faraz - Contact Us - codewithFaraz</a></h3><p> Lets talk about everything! Whether you have a question, want to start a project or simply want to connect. </p></div><div class=\"result-item\"><div class=\"result-item-link\"><a href=\"#\"> https://www.instagram.com › @codewithfaraz.com </a><a href=\"#\"><span class=\"material-icons-outlined dots\"> more_vert </span></a></div><h3><a href=\"#\">codewithfaraz (@codewithfaraz) • Instagram photos and videos</a></h3><p> 55.5k Followers, 302 Following, 110 Posts - See Instagram photos and videos from <strong>codewithfaraz</strong> (@<strong>codewithfaraz</strong>) </p></div><div class=\"result-item\"><div class=\"result-item-link\"><a href=\"#\">https://www.codewithfaraz.com</a><a href=\"#\"><span class=\"material-icons-outlined dots\"> more_vert </span></a></div><h3><a href=\"#\">Lorem ipsum dolor sit amet.</a></h3><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, laudantium sequi cumque voluptatum natus in?. </p></div><div class=\"result-item\"><div class=\"result-item-link\"><a href=\"#\"> https://www.codewithfaraz.com </a><a href=\"#\"><span class=\"material-icons-outlined dots\"> more_vert </span></a></div><h3><a href=\"#\">Lorem ipsum dolor sit amet.</a></h3><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, laudantium sequi cumque voluptatum natus in?. </p></div><div class=\"result-item\"><div class=\"result-item-link\"><a href=\"#\"> https://www.codewithfaraz.com › blogs </a><a href=\"#\"><span class=\"material-icons-outlined dots\"> more_vert </span></a></div><h3><a href=\"#\">Lorem ipsum dolor sit amet consectetur.</a></h3><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo repellat deleniti placeat. Dignissimos similique hic quibusdam reiciendis ipsa! Obcaecati, ea.. </p></div><div class=\"result-item\"><div class=\"result-item-link\"><a href=\"#\"> https://www.codewithfaraz.com </a><a href=\"#\"><span class=\"material-icons-outlined dots\"> more_vert </span></a></div><h3><a href=\"#\">Lorem ipsum dolor sit amet.</a></h3><p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit molestias recusandae tempora, voluptas hic fugit ad molestiae.. </p></div><div class=\"result-item\"><div class=\"result-item-link\"><a href=\"#\"> https://www.codewithfaraz.com </a><a href=\"#\"><span class=\"material-icons-outlined dots\"> more_vert </span></a></div><h3><a href=\"#\">Lorem ipsum dolor, sit amet consectetur adipisicing.</a></h3><p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, saepe maxime ratione numquam reiciendis expedita impedit voluptatem facere assumenda? </p></div><div class=\"result-item\"><div class=\"result-item-link\"><a href=\"#\"> https://www.codewithfaraz.com </a><a href=\"#\"><span class=\"material-icons-outlined dots\"> more_vert </span></a></div><h3><a href=\"#\">Lorem ipsum dolor sit amet.</a></h3><p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea assumenda perferendis, distinctio qui repellat sapiente amet culpa natus voluptatum repellendus? </p></div><!-- &lt;section class=&quot;pages-nav&quot;&gt;\r\n                    &lt;table&gt;\r\n                        &lt;tr&gt;\r\n                            &lt;td&gt;G&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot; id=&quot;first-o&quot;&gt;o&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;o&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;o&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;o&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;o&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;o&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;o&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;o&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;o&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;o&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;g&lt;/td&gt;\r\n                            &lt;td&gt;l&lt;/td&gt;\r\n                            &lt;td&gt;e&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;&gt;&lt;/a&gt;&lt;/td&gt;\r\n                        &lt;/tr&gt;\r\n                        &lt;tr&gt;\r\n                            &lt;td&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;5&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;6&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;7&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;8&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;9&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;10&lt;/a&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;/td&gt;\r\n                            &lt;td&gt;&lt;a href=&quot;#&quot;&gt;Next&lt;/a&gt;&lt;/td&gt;\r\n                        &lt;/tr&gt;\r\n                    &lt;/table&gt;\r\n                &lt;/section&gt; --></div></main><footer><div class=\"top-footer-container\"><div class=\"top-footer\"><span>Japan</span><span class=\"material-icons\"> ● </span><span>Tokyo</span><span style=\"color:#1a0dab;\"><a href=\"#\"> - From your IP address <a href=\"#\"> - Update location</a></a></span></div></div><div class=\"bottom-footer\"><ul><li><a href=\"#\">Help</a></li><li><a href=\"#\">Send feedback</a></li><li><a href=\"#\">Privacy</a></li><li><a href=\"#\">Terms</a></li></ul></div></footer>", 2);
-var _hoisted_4 = [_hoisted_1, _hoisted_2];
+})])], -1 /* HOISTED */);
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bottom-header\"><nav><div class=\"bottom-header__left-sec\"><ul><li class=\"active-page\"><a href=\"#\"><span class=\"material-symbols-outlined\"> search </span>All</a></li><li><a href=\"#\"><span class=\"material-symbols-outlined\"> imagesmode </span> Images</a></li><li><a href=\"#\"><span class=\"material-symbols-outlined\"> shopping_cart </span> Shopping</a></li><li><a href=\"#\"><span class=\"material-symbols-outlined\"> slideshow </span> Videos</a></li><li><a href=\"#\"><span class=\"material-symbols-outlined\"> breaking_news </span> News</a></li><li><a href=\"#\"><span class=\"material-symbols-outlined\"> more_vert </span> More</a></li></ul></div><div class=\"bottom-header__right-sec\"><ul><li><a href=\"#\">Tools</a></li></ul></div></nav></div>", 1);
+var _hoisted_11 = {
+  key: 0
+};
+var _hoisted_12 = {
+  "class": "main-container"
+};
+var _hoisted_13 = {
+  "class": "search-delay"
+};
+var _hoisted_14 = {
+  "class": "result-item"
+};
+var _hoisted_15 = {
+  "class": "result-item-link"
+};
+var _hoisted_16 = ["href"];
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "material-symbols-outlined"
+}, " more_vert ", -1 /* HOISTED */);
+var _hoisted_18 = ["href"];
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<footer><div class=\"top-footer-container\"><div class=\"top-footer\"><span>Japan</span><span class=\"material-icons\"> ● </span><span>Tokyo</span><span style=\"color:#1a0dab;\"><a href=\"#\"> - From your IP address <a href=\"#\"> - Update location</a></a></span></div></div><div class=\"bottom-footer\"><ul><li><a>More options in Quick settings (<span class=\"material-symbols-outlined\"> settings </span>)</a></li></ul></div></footer>", 1);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, _hoisted_4);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "search",
+    name: "search",
+    id: "inp--searchbox",
+    autocomplete: "off",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return _ctx.$route.query.q = $event;
+    })
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.$route.query.q]])]), _hoisted_8])]), _hoisted_9]), _hoisted_10]), _ctx.dataReady ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("main", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.data.queries.nextPage[0].totalResults) + " results (0.35 seconds) ", 1 /* TEXT */), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.data.items, function (item) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      href: item.formattedUrl
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.formattedUrl), 9 /* TEXT, PROPS */, _hoisted_16), _hoisted_17]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      href: item.formattedUrl
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 9 /* TEXT, PROPS */, _hoisted_18)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.snippet), 1 /* TEXT */)]);
+  }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section class=\"pages-nav\">\r\n                    <table>\r\n                        <tr>\r\n                            <td>G</td>\r\n                            <td><a href=\"#\" id=\"first-o\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td>g</td>\r\n                            <td>l</td>\r\n                            <td>e</td>\r\n                            <td><a href=\"#\">></a></td>\r\n                        </tr>\r\n                        <tr>\r\n                            <td></td>\r\n                            <td><a href=\"#\">1</a></td>\r\n                            <td><a href=\"#\">2</a></td>\r\n                            <td><a href=\"#\">3</a></td>\r\n                            <td><a href=\"#\">4</a></td>\r\n                            <td><a href=\"#\">5</a></td>\r\n                            <td><a href=\"#\">6</a></td>\r\n                            <td><a href=\"#\">7</a></td>\r\n                            <td><a href=\"#\">8</a></td>\r\n                            <td><a href=\"#\">9</a></td>\r\n                            <td><a href=\"#\">10</a></td>\r\n                            <td></td>\r\n                            <td></td>\r\n                            <td></td>\r\n                            <td><a href=\"#\">Next</a></td>\r\n                        </tr>\r\n                    </table>\r\n                </section> ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_19]);
 }
 
 /***/ }),

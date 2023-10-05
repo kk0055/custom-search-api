@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <header>
             <div class="top-header">
                 <div class="top-header__left-sec">
@@ -14,9 +14,7 @@
                     </a>
                     <div class="search-container">
                         <div class="search-container__left-sec">
-                            <span
-                                class="material-icons search-container__left-sec--srch-icon"
-                            >
+                            <span class="material-symbols-outlined">
                                 search
                             </span>
                             <input
@@ -24,14 +22,20 @@
                                 name="search"
                                 id="inp--searchbox"
                                 autocomplete="off"
-                                value="codewithfaraz"
+                                v-model="$route.query.q"
                             />
                         </div>
 
                         <div class="search-container__right-sec">
-                            <span class="material-icons"> close </span>
-                            <div class="material-icons">mic</div>
-                            <span class="material-icons"> search </span>
+                            <span class="material-symbols-outlined">
+                                close
+                            </span>
+                            <span class="material-symbols-outlined">
+                                keyboard_voice
+                            </span>
+                            <span class="material-symbols-outlined">
+                                search
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -51,7 +55,7 @@
 
                     <div class="top-header__right-sec--user-acc">
                         <img
-                            src="https://lh3.googleusercontent.com/ogw/ADGmqu_wdWJPIUjYUsJmXS6LT_Nxgzb34iCho1mrNsbH=s83-c-mo"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeQzvB5Va-nedgQrbVqIh1xDLY7jOWDEGsZw&usqp=CAU"
                             alt=""
                         />
                     </div>
@@ -62,46 +66,47 @@
                     <div class="bottom-header__left-sec">
                         <ul>
                             <li class="active-page">
-                                <a href="#"
-                                    ><span class="material-icons">search</span
+                                <a href="#">
+                                    <span class="material-symbols-outlined">
+                                        search </span
                                     >All</a
                                 >
                             </li>
                             <li>
                                 <a href="#">
-                                    <span class="material-icons-outlined">
-                                        article
-                                    </span>
-                                    News</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="material-icons-outlined">
-                                        book
-                                    </span>
-                                    Books</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="material-icons-outlined">
-                                        smart_display
-                                    </span>
-                                    Videos</a
-                                >
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="material-icons-outlined">
-                                        image
+                                    <span class="material-symbols-outlined">
+                                        imagesmode
                                     </span>
                                     Images</a
                                 >
                             </li>
                             <li>
                                 <a href="#">
-                                    <span class="material-icons-outlined">
+                                    <span class="material-symbols-outlined">
+                                        shopping_cart
+                                    </span>
+                                    Shopping</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="material-symbols-outlined">
+                                        slideshow
+                                    </span>
+                                    Videos</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="material-symbols-outlined">
+                                        breaking_news
+                                    </span>
+                                    News</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="material-symbols-outlined">
                                         more_vert
                                     </span>
                                     More</a
@@ -118,241 +123,31 @@
             </div>
         </header>
 
-        <main>
+        <main v-if="dataReady">
             <div class="main-container">
                 <div class="search-delay">
-                    About 17,000,000 results (0.35 seconds)
+                    {{ data.queries.nextPage[0].totalResults }} results (0.35
+                    seconds)
                 </div>
-                <div class="result-item">
-                    <div class="result-item-link">
-                        <a href="#">https://www.codewithfaraz.com</a>
-                        <a href="#"
-                            ><span class="material-icons-outlined dots">
+                <template v-for="item in data.items">
+                    <div class="result-item">
+                        <div class="result-item-link">
+                            <a :href="item.formattedUrl">{{
+                                item.formattedUrl
+                            }}</a>
+                            <span class="material-symbols-outlined">
                                 more_vert
-                            </span></a
-                        >
-                    </div>
-                    <h3>
-                        <a href="#"
-                            >Code with Faraz - Best Front-End Components and
-                            Blogs</a
-                        >
-                    </h3>
-                    <p>
-                        codewithfaraz is an up-to-date collection of accessible
-                        front-end components, blogs and tutorials related to
-                        technology, programming and web development.
-                    </p>
-                    <div class="sub-result-container">
-                        <div class="sub-result-item">
-                            <h3><a href="#">Components</a></h3>
-                            <p>
-                                Find an up-to-date collection of accessible
-                                front-end components ...
-                            </p>
+                            </span>
                         </div>
-                        <div class="sub-result-item">
-                            <h3><a href="#">Blogs</a></h3>
-                            <p>
-                                Get Latest Blogs related to technology,
-                                programming ...
-                            </p>
-                        </div>
-                        <div class="sub-result-item">
-                            <h3><a href="#">About</a></h3>
-                            <p>
-                                This is Faraz Choudhary admin of
-                                codewithFaraz.com ...
-                            </p>
-                        </div>
-                        <div class="sub-result-item">
-                            <h3><a href="#">Privacy Policy</a></h3>
-                            <p>
-                                This Privacy Policy applies only to our online
-                                activities and is valid for ...
-                            </p>
-                        </div>
-                        <div class="sub-result-item">
-                            <h3><a href="#">Contact</a></h3>
-                            <p>
-                                Lets talk about everything! Whether you have a
-                                question ...
-                            </p>
-                        </div>
+                        <h3>
+                            <a :href="item.formattedUrl">{{ item.title }}</a>
+                        </h3>
+                        <p>
+                            {{ item.snippet }}
+                        </p>
                     </div>
-                </div>
-                <div class="result-item">
-                    <div class="result-item-link">
-                        <a href="#"
-                            >https://www.codewithfaraz.com › components
-                        </a>
-                        <a href="#"
-                            ><span class="material-icons-outlined dots">
-                                more_vert
-                            </span></a
-                        >
-                    </div>
-                    <h3>
-                        <a href="#"
-                            >Latest Front-End Components - codewithFaraz</a
-                        >
-                    </h3>
-                    <p>
-                        Find an up-to-date collection of accessible front-end
-                        components. Components are used to define custom,
-                        reusable HTML elements.
-                    </p>
-                </div>
-                <div class="result-item">
-                    <div class="result-item-link">
-                        <a href="#">https://www.codewithfaraz.com › contact </a>
-                        <a href="#"
-                            ><span class="material-icons-outlined dots">
-                                more_vert
-                            </span></a
-                        >
-                    </div>
-                    <h3>
-                        <a href="#"
-                            >Code with Faraz - Contact Us - codewithFaraz</a
-                        >
-                    </h3>
-                    <p>
-                        Lets talk about everything! Whether you have a question,
-                        want to start a project or simply want to connect.
-                    </p>
-                </div>
-                <div class="result-item">
-                    <div class="result-item-link">
-                        <a href="#">
-                            https://www.instagram.com › @codewithfaraz.com
-                        </a>
-                        <a href="#"
-                            ><span class="material-icons-outlined dots">
-                                more_vert
-                            </span></a
-                        >
-                    </div>
-                    <h3>
-                        <a href="#"
-                            >codewithfaraz (@codewithfaraz) • Instagram photos
-                            and videos</a
-                        >
-                    </h3>
-                    <p>
-                        55.5k Followers, 302 Following, 110 Posts - See
-                        Instagram photos and videos from
-                        <strong>codewithfaraz</strong>
-                        (@<strong>codewithfaraz</strong>)
-                    </p>
-                </div>
-                <div class="result-item">
-                    <div class="result-item-link">
-                        <a href="#">https://www.codewithfaraz.com</a>
-                        <a href="#"
-                            ><span class="material-icons-outlined dots">
-                                more_vert
-                            </span></a
-                        >
-                    </div>
-                    <h3><a href="#">Lorem ipsum dolor sit amet.</a></h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facilis, laudantium sequi cumque voluptatum natus in?.
-                    </p>
-                </div>
-                <div class="result-item">
-                    <div class="result-item-link">
-                        <a href="#"> https://www.codewithfaraz.com </a>
-                        <a href="#"
-                            ><span class="material-icons-outlined dots">
-                                more_vert
-                            </span></a
-                        >
-                    </div>
-                    <h3>
-                        <a href="#">Lorem ipsum dolor sit amet.</a>
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facilis, laudantium sequi cumque voluptatum natus in?.
-                    </p>
-                </div>
-                <div class="result-item">
-                    <div class="result-item-link">
-                        <a href="#"> https://www.codewithfaraz.com › blogs </a>
-                        <a href="#"
-                            ><span class="material-icons-outlined dots">
-                                more_vert
-                            </span></a
-                        >
-                    </div>
-                    <h3>
-                        <a href="#">Lorem ipsum dolor sit amet consectetur.</a>
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quo repellat deleniti placeat. Dignissimos similique hic
-                        quibusdam reiciendis ipsa! Obcaecati, ea..
-                    </p>
-                </div>
-                <div class="result-item">
-                    <div class="result-item-link">
-                        <a href="#"> https://www.codewithfaraz.com </a>
-                        <a href="#"
-                            ><span class="material-icons-outlined dots">
-                                more_vert
-                            </span></a
-                        >
-                    </div>
-                    <h3>
-                        <a href="#">Lorem ipsum dolor sit amet.</a>
-                    </h3>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Reprehenderit molestias recusandae tempora,
-                        voluptas hic fugit ad molestiae..
-                    </p>
-                </div>
-                <div class="result-item">
-                    <div class="result-item-link">
-                        <a href="#"> https://www.codewithfaraz.com </a>
-                        <a href="#"
-                            ><span class="material-icons-outlined dots">
-                                more_vert
-                            </span></a
-                        >
-                    </div>
-                    <h3>
-                        <a href="#"
-                            >Lorem ipsum dolor, sit amet consectetur
-                            adipisicing.</a
-                        >
-                    </h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Illum, saepe maxime ratione numquam reiciendis
-                        expedita impedit voluptatem facere assumenda?
-                    </p>
-                </div>
-                <div class="result-item">
-                    <div class="result-item-link">
-                        <a href="#"> https://www.codewithfaraz.com </a>
-                        <a href="#"
-                            ><span class="material-icons-outlined dots">
-                                more_vert
-                            </span></a
-                        >
-                    </div>
-                    <h3>
-                        <a href="#">Lorem ipsum dolor sit amet.</a>
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Ea assumenda perferendis, distinctio qui repellat
-                        sapiente amet culpa natus voluptatum repellendus?
-                    </p>
-                </div>
+                </template>
+
                 <!-- <section class="pages-nav">
                     <table>
                         <tr>
@@ -410,10 +205,15 @@
             </div>
             <div class="bottom-footer">
                 <ul>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Send feedback</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
+                    <li>
+                        <a
+                            >More options in Quick settings (<span
+                                class="material-symbols-outlined"
+                            >
+                                settings </span
+                            >)</a
+                        >
+                    </li>
                 </ul>
             </div>
         </footer>
@@ -426,23 +226,32 @@ export default {
     data: () => ({
         results: "",
         data: "",
+        items: "",
+        dataReady: false,
     }),
     created() {
-        console.log(this.$route.query.q);
-        this.getData();
+        // this.getData();
     },
     methods: {
         async getData() {
             if (!this.$route.query.q) return;
             const url = `api/search`;
-            await axios
-                .get(url, {
+            try {
+                const response = await axios.get(url, {
                     params: {
                         keyword: this.$route.query.q,
                     },
-                })
-                .then((response) => (this.results = response))
-            this.data = this.results.data  
+                });
+
+                this.results = response;
+                this.data = this.results.data;
+                this.items = this.data.items;
+                console.log(response);
+                console.log(this.data.items);
+                this.dataReady = true;
+            } catch (error) {
+                console.log(error);
+            }
         },
     },
 };
@@ -473,7 +282,6 @@ html {
     font-size: 62.5%;
     /* 1rem => 10px */
 }
-
 body {
     font-size: 16px;
     /* Default Font Size => 16px */
