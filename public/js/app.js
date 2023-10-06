@@ -22817,27 +22817,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               response = _context.sent;
               _this.results = response;
               _this.data = _this.results.data;
-              console.log(response);
-              console.log(_this.data.items);
               _this.dataReady = true;
-              _context.next = 18;
+              _context.next = 16;
               break;
-            case 15:
-              _context.prev = 15;
+            case 13:
+              _context.prev = 13;
               _context.t0 = _context["catch"](4);
               console.log(_context.t0);
-            case 18:
+            case 16:
               _this.$router.push({
                 name: "results",
                 query: {
                   q: keyword
                 }
               });
-            case 19:
+            case 17:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[4, 15]]);
+        }, _callee, null, [[4, 13]]);
       }))();
     }
   }
@@ -22963,10 +22961,7 @@ var _hoisted_5 = {
 var _hoisted_6 = {
   "class": "search-container__left-sec"
 };
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "material-symbols-outlined"
-}, " search ", -1 /* HOISTED */);
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "search-container__right-sec"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "material-symbols-outlined"
@@ -22975,7 +22970,7 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, " keyboard_voice "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "material-symbols-outlined"
 }, " search ")], -1 /* HOISTED */);
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "top-header__right-sec"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "top-header__right-sec--apps"
@@ -22991,30 +22986,30 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeQzvB5Va-nedgQrbVqIh1xDLY7jOWDEGsZw&usqp=CAU",
   alt: ""
 })])], -1 /* HOISTED */);
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bottom-header\"><nav><div class=\"bottom-header__left-sec\"><ul><li class=\"active-page\"><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> search </span>All</a></li><li><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> imagesmode </span> Images</a></li><li><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> shopping_cart </span> Shopping</a></li><li><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> slideshow </span> Videos</a></li><li><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> breaking_news </span> News</a></li><li><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> more_vert </span> More</a></li></ul></div><div class=\"bottom-header__right-sec\"><ul><li><a href=\"dummy:\">Tools</a></li></ul></div></nav></div>", 1);
-var _hoisted_11 = {
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bottom-header\"><nav><div class=\"bottom-header__left-sec\"><ul><li class=\"active-page\"><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> search </span>All</a></li><li><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> imagesmode </span> Images</a></li><li><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> shopping_cart </span> Shopping</a></li><li><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> slideshow </span> Videos</a></li><li><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> breaking_news </span> News</a></li><li><a href=\"dummy:\"><span class=\"material-symbols-outlined\"> more_vert </span> More</a></li></ul></div><div class=\"bottom-header__right-sec\"><ul><li><a href=\"dummy:\">Tools</a></li></ul></div></nav></div>", 1);
+var _hoisted_10 = {
   key: 0
 };
-var _hoisted_12 = {
+var _hoisted_11 = {
   "class": "main-container"
 };
-var _hoisted_13 = {
+var _hoisted_12 = {
   "class": "search-delay"
 };
-var _hoisted_14 = {
+var _hoisted_13 = {
   "class": "result-item"
 };
-var _hoisted_15 = {
+var _hoisted_14 = {
   "class": "result-item-link"
 };
-var _hoisted_16 = ["href"];
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_15 = ["href"];
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "material-symbols-outlined"
 }, " more_vert ", -1 /* HOISTED */);
-var _hoisted_18 = ["href"];
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<footer><div class=\"top-footer-container\"><div class=\"top-footer\"><span>Japan</span><span class=\"material-icons\"> ● </span><span>Tokyo</span><span style=\"color:#1a0dab;\"><a href=\"dummy:\"> - From your IP address <a href=\"dummy:\"> - Update location</a></a></span></div></div><div class=\"bottom-footer\"><span>More options in <a href=\"dummy:\" style=\"color:#1a0dab;\"> Quick settings </a></span></div></footer>", 1);
+var _hoisted_17 = ["href"];
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<footer><div class=\"top-footer-container\"><div class=\"top-footer\"><span>Japan</span><span class=\"material-icons\"> ● </span><span>Tokyo</span><span style=\"color:#1a0dab;\"><a href=\"dummy:\"> - From your IP address <a href=\"dummy:\"> - Update location</a></a></span></div></div><div class=\"bottom-footer\"><span>More options in <a href=\"dummy:\" style=\"color:#1a0dab;\"> Quick settings </a></span></div></footer>", 1);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "search",
     name: "search",
     id: "inp--searchbox",
@@ -23025,13 +23020,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onKeydown: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withKeys)(function () {
       return $options.getData && $options.getData.apply($options, arguments);
     }, ["enter"]))
-  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $options.keyword]])]), _hoisted_8])]), _hoisted_9]), _hoisted_10]), _ctx.dataReady ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("main", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.data.queries.nextPage[0].totalResults) + " results (0.35 seconds) ", 1 /* TEXT */), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.data.items, function (item) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $options.keyword]])]), _hoisted_7])]), _hoisted_8]), _hoisted_9]), _ctx.dataReady ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("main", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.data.searchInformation.formattedTotalResults) + " results (" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.data.searchInformation.formattedSearchTime) + " seconds) ", 1 /* TEXT */), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.data.items, function (item) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       href: item.formattedUrl
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.formattedUrl), 9 /* TEXT, PROPS */, _hoisted_16), _hoisted_17]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.formattedUrl), 9 /* TEXT, PROPS */, _hoisted_15), _hoisted_16]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       href: item.formattedUrl
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 9 /* TEXT, PROPS */, _hoisted_18)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.snippet), 1 /* TEXT */)]);
-  }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section class=\"pages-nav\">\r\n                    <table>\r\n                        <tr>\r\n                            <td>G</td>\r\n                            <td><a href=\"#\" id=\"first-o\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td>g</td>\r\n                            <td>l</td>\r\n                            <td>e</td>\r\n                            <td><a href=\"#\">></a></td>\r\n                        </tr>\r\n                        <tr>\r\n                            <td></td>\r\n                            <td><a href=\"#\">1</a></td>\r\n                            <td><a href=\"#\">2</a></td>\r\n                            <td><a href=\"#\">3</a></td>\r\n                            <td><a href=\"#\">4</a></td>\r\n                            <td><a href=\"#\">5</a></td>\r\n                            <td><a href=\"#\">6</a></td>\r\n                            <td><a href=\"#\">7</a></td>\r\n                            <td><a href=\"#\">8</a></td>\r\n                            <td><a href=\"#\">9</a></td>\r\n                            <td><a href=\"#\">10</a></td>\r\n                            <td></td>\r\n                            <td></td>\r\n                            <td></td>\r\n                            <td><a href=\"#\">Next</a></td>\r\n                        </tr>\r\n                    </table>\r\n                </section> ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_19]);
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 9 /* TEXT, PROPS */, _hoisted_17)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.snippet), 1 /* TEXT */)]);
+  }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section class=\"pages-nav\">\r\n                    <table>\r\n                        <tr>\r\n                            <td>G</td>\r\n                            <td><a href=\"#\" id=\"first-o\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td><a href=\"#\">o</a></td>\r\n                            <td>g</td>\r\n                            <td>l</td>\r\n                            <td>e</td>\r\n                            <td><a href=\"#\">></a></td>\r\n                        </tr>\r\n                        <tr>\r\n                            <td></td>\r\n                            <td><a href=\"#\">1</a></td>\r\n                            <td><a href=\"#\">2</a></td>\r\n                            <td><a href=\"#\">3</a></td>\r\n                            <td><a href=\"#\">4</a></td>\r\n                            <td><a href=\"#\">5</a></td>\r\n                            <td><a href=\"#\">6</a></td>\r\n                            <td><a href=\"#\">7</a></td>\r\n                            <td><a href=\"#\">8</a></td>\r\n                            <td><a href=\"#\">9</a></td>\r\n                            <td><a href=\"#\">10</a></td>\r\n                            <td></td>\r\n                            <td></td>\r\n                            <td></td>\r\n                            <td><a href=\"#\">Next</a></td>\r\n                        </tr>\r\n                    </table>\r\n                </section> ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_18]);
 }
 
 /***/ }),

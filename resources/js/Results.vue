@@ -14,9 +14,7 @@
                     </a>
                     <div class="search-container">
                         <div class="search-container__left-sec">
-                            <span class="material-symbols-outlined">
-                                search
-                            </span>
+                           
                             <input
                                 type="search"
                                 name="search"
@@ -28,7 +26,7 @@
                         </div>
 
                         <div class="search-container__right-sec">
-                            <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined"  >
                                 close
                             </span>
                             <span class="material-symbols-outlined">
@@ -127,7 +125,7 @@
         <main v-if="dataReady">
             <div class="main-container">
                 <div class="search-delay">
-                    {{ data.queries.nextPage[0].totalResults }} results (0.35
+                    {{ data.searchInformation.formattedTotalResults }} results ({{ data.searchInformation.formattedSearchTime }}
                     seconds)
                 </div>
                 <template v-for="item in data.items">
@@ -256,8 +254,6 @@ export default {
 
                 this.results = response;
                 this.data = this.results.data;
-                console.log(response);
-                console.log(this.data.items);
                 this.dataReady = true;
             } catch (error) {
                 console.log(error);
