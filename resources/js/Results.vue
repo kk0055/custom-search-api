@@ -1,17 +1,17 @@
 <template>
-    <div>
+    <div  v-if="dataReady">
         <header>
             <div class="top-header">
                 <div class="top-header__left-sec">
                     <span class="material-icons-outlined menu-bar-icon">
                         menu
                     </span>
-                    <a href="dummy:" id="google-logo" title="Go to Google Home">
+                    <router-link to="/" id="google-logo" title="Go to Google Home">
                         <img
                             src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
                             alt=""
                         />
-                    </a>
+                    </router-link>
                     <div class="search-container">
                         <div class="search-container__left-sec">
                            
@@ -122,7 +122,7 @@
             </div>
         </header>
 
-        <main v-if="dataReady">
+        <main>
             <div class="main-container">
                 <div class="search-delay">
                     {{ data.searchInformation.formattedTotalResults }} results ({{ data.searchInformation.formattedSearchTime }}
